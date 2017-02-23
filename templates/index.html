@@ -59,10 +59,20 @@
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
-	<h1>Data Pipeline Project Mobile Byte Example</h1>
-        <p>This is the Mobile Byte of the Data Pipeline class.</p>
+	<h1>Mobile Data: Battery Level & Phone Usage Analysis</h1>
+        <p>For this byte, I will be focusing on the battery and phone usage data collected on my phone for the period of <b>January 28 – February 19 2016.</b><br>This analysis answers the question: what is the relationship between my phone’s battery level and phone usage.  My hypothesis is that these two have positive relationship. In another word, I would tend to use more of my phone when my phone has more battery. </p>
       </div>
-
+<ul>
+<center><iframe width="500" height="300" scrolling="yes" frameborder="no" src="https://fusiontables.google.com/embedviz?viz=GVIZ&amp;t=TABLE&amp;q=select+col0%2C+col1%2C+col2%2C+col3%2C+col4+from+1dzQkwBSXkMLuXBkVuu9DpP6tBIphpIM4HhlLfMR2&amp;containerId=googft-gviz-canvas"></iframe></center>
+<li>To get the data frame above, I first converted unix timestamp into “date” and “time” columns. Then I merged battery data with phone usage data using date and time as keys. Then I cleaned the merged data by excluding the zero values in “device on time”. Before plotting the battery level versus phone usage graph, I took the log transformation of phone usage to ensure the patterns are more interpretable and prevent highly skewed distribution.  
+</li>
+    <center><img alt="Battery_vs_Usage_scatterplot" src="../img/battery_usage.png"/></center>
+<li>From the scatter plot above, it seems that there are more data points clustering around higher battery level, which proofs my hypothesis stated before: I tend to use my phone more often when my phone has higher battery level. 
+</li>
+<li>To see the relationship more clearly. I binned battery level into 3 statuses: low, medium, high. Then, I also plotted a Quantile plot of log transformed phone usage for each status. As we can see in the following graph, the third and forth quantiles of “low” status are way below the same two quantiles for “medium”(green) and “high”(blue) battery status. The longest phone usage time happened when the battery is at “high”. These insights further proof my assumption regarding the relationship between battery level and phone usage.</li>
+<li>One interesting thing I found about myself is that I tend to use my phone longer when it’s at medium battery level. As shown in graph below, “medium” level(green) plots are above “high” level(red) in most cases. This is something I did not realize before. My guess is that I usually charge my phone overnight and go to classes in the morning, so I don’t have a lot of time to check my phone in the morning right after my phone gets charged.</li>
+    <center><img alt = "Quantile_Usage" src = "../img/quantile_usage.png"/></center>
+</ul>
    <h2>Query Results</h2>
    <ul>
    {% for item in queries %}

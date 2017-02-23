@@ -47,18 +47,23 @@
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
 	<h1>Accountability: About This Data Set</h1>
-        <p>Write a brief summary about the data set here</a></p>
+        <p>This dataset contains my phone usage & battery level data between 1/28/17 and 2/19/17 stored in Google Cloud SQL. There are two relevant tables for this Byte:</p>
+          <ul>
+            <li>plugin_device_usage: The table that contains Google activity data. It includes columns that represent the timestamp, elapsed device on time(ms), elapsed device off time(ms).</li>
+              <li>battery: The table that contains location data. It includes columns that represent the timestamp, battery status, batter level, battery scale, battery voltage, battery temperature, battery adaptor, battery health, battery technology.
+              </li>
+          </ul>
       </div>
 
     
       <div class="page-header">
 	<h2>Where did this data come from?</h2>
-	<p>fill in</p>
+	<p>The dataset comes from a study of our activity & phone usage pattern by CMU Ubicomp Lab. The research uses <a href="http://www.awareframework.com/">AWARE framework</a>, which stores various phone sensor data and, most importantly to this Byte, phone location and activity data. The location and activity data is sourced directly from relevant Google services. Data about me is periodically sent to an AWARE server that Ubicomp Lab manages, and the dataset for this Byte is a dump of my first 23 days' data in .sql format.</p>
       </div>
       
       <div class="page-header">
 	<h2>Who has access to it?</h2>
-	<p>fill in</p>
+	<p>The data is part of the research data released to me. And, the datasets considered in this byte (location and activity data) are only accessible to Google, Ubicomp Lab, and me. Google has privacy policy that ensures the privacy of my data, and Ubicomp Lab signed a privacy agreement with me. Thus, potential privacy invasion of the dataset is minimal.</p>
       </div>
 
 
